@@ -4,6 +4,7 @@ import CommentOutlinedIcon from "@mui/icons-material/CommentOutlined";
 import EmojiEventsOutlinedIcon from "@mui/icons-material/EmojiEventsOutlined";
 import Badges from "../components/Badges";
 import { checkIfUrlIsImg } from "../utlis";
+import { Fragment } from "react";
 
 export default function PostDetails() {
   const { state } = useLocation();
@@ -58,7 +59,7 @@ export default function PostDetails() {
                 </div>
               </div>
             </div>
-            {all_awardings.length && (
+            {all_awardings.length ? (
               <div className="text-gray-800">
                 <h1 className=" underline text-right font-bold">
                   Awards
@@ -68,6 +69,8 @@ export default function PostDetails() {
                   <Badges key={award.id} award={award} />
                 ))}
               </div>
+            ) : (
+              <Fragment />
             )}
           </div>
           <p className="text-gray-800">{selftext}</p>
