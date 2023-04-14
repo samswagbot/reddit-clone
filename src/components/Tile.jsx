@@ -66,7 +66,7 @@ export default function Tile(props) {
           </span>
         </div>
       </div>
-      {console.log(thumbnail, title)}
+
       {thumbnail === "nsfw" ? (
         <div className="w-36 hidden pr-5 md:flex items-center flex-col justify-center">
           <ImageNotSupportedIcon />
