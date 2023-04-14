@@ -5,7 +5,7 @@ import SwapVertOutlined from "@mui/icons-material/SwapVertOutlined";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { checkIfUrlIsImg } from "../utils";
 import { useTimeAgo } from "../hooks/useTimeAgo";
-import { Fragment, useMemo } from "react";
+import { Fragment } from "react";
 
 export default function Tile(props) {
   const {
