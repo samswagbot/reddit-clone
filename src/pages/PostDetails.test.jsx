@@ -30,7 +30,7 @@ describe("PostDetails component", () => {
     expect(screen.getByAltText(post.title)).toBeInTheDocument();
     expect(screen.getByText(`Posted by ${post.author}`)).toBeInTheDocument();
 
-    expect(screen.getByText(post.score)).toBeInTheDocument();
+    expect(screen.getByText(`${post.score} score`)).toBeInTheDocument();
     expect(
       screen.getByText(`${post.num_comments} comments`)
     ).toBeInTheDocument();

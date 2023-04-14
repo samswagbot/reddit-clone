@@ -14,7 +14,6 @@ const usePosts = () => {
       const res = await axios.get("https://api.reddit.com/r/pics/hot.json");
       setPosts(res.data.data.children);
     } catch (error) {
-      axios.isCancel(error);
       setError(error.message);
     }
     setLoading(false);

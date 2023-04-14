@@ -3,7 +3,7 @@ import SwapVertOutlined from "@mui/icons-material/SwapVertOutlined";
 import CommentOutlinedIcon from "@mui/icons-material/CommentOutlined";
 import EmojiEventsOutlinedIcon from "@mui/icons-material/EmojiEventsOutlined";
 import Badges from "../components/Badges";
-import { checkIfUrlIsImg } from "../utlis";
+import { checkIfUrlIsImg } from "../utils";
 import { Fragment } from "react";
 
 export default function PostDetails() {
@@ -25,7 +25,7 @@ export default function PostDetails() {
 
   const formattedDate = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
   return (
-    <div className="min-h-screen flex flex-col  justify-center">
+    <div className="min-h-screen flex flex-col justify-center">
       <div className="max-w-3xl mx-auto mt-10 mb-20">
         <div className="bg-white shadow-md rounded-lg p-6">
           <h1 className="text-3xl font-bold mb-2 text-gray-900">{title}</h1>
@@ -44,7 +44,7 @@ export default function PostDetails() {
                 </span>
                 <div className="mt-1">
                   <span>
-                    <SwapVertOutlined /> {score}
+                    <SwapVertOutlined /> {score} score
                   </span>
                   <span className="mx-2 hidden md:inline">|</span>
                   <span className="block md:inline">

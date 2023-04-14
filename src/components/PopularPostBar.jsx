@@ -18,10 +18,9 @@ export default function PopularPostBar() {
   };
 
   // sorts the post with largest scores to the top
-  const sortBasedOnScore = (a, b) => {
+  const sortBasedOnScore = () => {
     const copyOfPosts = [...posts];
     const sortedArr = copyOfPosts.sort((a, b) => b.data.score - a.data.score);
-
     setPosts(sortedArr);
   };
 
@@ -39,7 +38,7 @@ export default function PopularPostBar() {
    * These two scores are added together to give a final "hotness" score,
    * which is used to rank the posts.
    *  */
-  const sortByHot = (a, b) => {
+  const sortByHot = () => {
     const copyOfPosts = [...posts];
 
     const sortedArr = copyOfPosts.sort((a, b) => {
@@ -67,21 +66,21 @@ export default function PopularPostBar() {
    * This gives more weight to posts with a larger number of votes and a higher level of disagreement.
    */
 
-  const sortByControversay = () => {
+  const sortByControversy = () => {
     const copyOfPosts = [...posts];
 
     const sortedArr = copyOfPosts.sort((a, b) => {
-      const controA =
+      const controlA =
         ((a.data.ups - a.data.downs + 1) *
           (Math.abs(a.data.ups - a.data.downs) /
             (a.data.ups + a.data.downs + 1))) ^
         1.5;
-      const controB =
+      const controlB =
         ((b.data.ups - b.data.downs + 1) *
           (Math.abs(b.data.ups - b.data.downs) /
             (b.data.ups + b.data.downs + 1))) ^
         1.5;
-      return controA - controB;
+      return controlA - controlB;
     });
 
     setPosts(sortedArr);
@@ -113,7 +112,7 @@ export default function PopularPostBar() {
           <span className="ml-2">Top</span>
         </button>
         <button
-          onClick={sortByControversay}
+          onClick={sortByControversy}
           className="text-orange-600 flex mr-2 font-medium hover:text-gray-500"
         >
           <ForumIcon />
